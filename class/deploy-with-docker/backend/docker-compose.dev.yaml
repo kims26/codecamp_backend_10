@@ -7,19 +7,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./src:/myfolder/src
+    # volumes:
+    #   - ./src:/myfolder/src
     ports:
       - 3000:3000
     env_file:
-      - ./.env.docker
+      - ./.env.dev
 
   # 컴퓨터이름
   my-database:
-    # platform: linux/86_64
+    platform: linux/86_64
     image: mysql:latest
     environment:
-      MYSQL_DATABASE: 'mydocker10'
+      MYSQL_DATABASE: 'mydev10'
       MYSQL_ROOT_PASSWORD: 'root'
     ports:
       - 3306:3306
