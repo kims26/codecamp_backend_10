@@ -18,7 +18,7 @@ steps:
     - set 
     - image 
     - deployment/mybackend-nestjs
-    - mybackend10-nestjsasia.gcr.io/primal-library-370305/my-backend:1.8
+    - mybackend-nestjs my-backend-sha256-1=asia.gcr.io/primal-library-370305/my-backend:1.9
    env:
    - CLOUDSDK_COMPUTE_ZONE=asia-northeast3
    - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-4
