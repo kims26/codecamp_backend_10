@@ -13,4 +13,4 @@ COPY . /myfolder/
 
 # 3. 도커안에서 index.js 실행시키기
 RUN yarn build
-CMD yarn start:dev:prod
+CMD yarn start:prod

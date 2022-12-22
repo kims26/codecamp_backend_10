@@ -1,0 +1,24 @@
+steps:
+#1단계 => docker-compose -f docker-compose.prod.yaml build
+-kubectl 이라는 것을 다운로드 받아야된다 !!! 
+- name : docker/compose:1.29.0
+  args:
+   - -f
+   - class/deploy-with-docker/backend/docker-compose.prod.yaml
+   - build
+#2단계 =>docker-comose -f docker-compose.prod.yaml push
+- name: docker/compose:1.29.0
+  args: 
+    - -f
+    - class/deploy-with-docker/backend/docker-compose.prod.yaml
+    - push
+#3단계 =>kubectl set image deployment/mybackend-nestjs
+- name: gcr.io/cloud-builders/kubectl
+  args: 
+    - set 
+    - image 
+    - deployment/mybackend-nestjs
+    - mybackend10-nestjsasia.gcr.io/primal-library-370305/my-backend:1.8
+   env:
+   - CLOUDSDK_COMPUTE_ZONE=asia-northeast3
+   - CLOUDSDK_CONTAINER_CLUSTER=autopilot-cluster-4

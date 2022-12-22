@@ -14,6 +14,7 @@ import { JwtAccessStrategy } from './commons/auth/jwt-access.strategy';
 import { JwtRefreshStrategy } from './commons/auth/jwt-refresh.strategy';
 import { PointsTransactionsModule } from './apis/pointsTransactions/pointsTransactions.module';
 import { FilesModule } from './apis/files/files.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -46,5 +47,6 @@ import { FilesModule } from './apis/files/files.module';
     JwtAccessStrategy, //
     JwtRefreshStrategy,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}

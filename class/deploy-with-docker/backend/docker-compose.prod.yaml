@@ -4,7 +4,7 @@ version: '3.7'
 services:
   # 컴퓨터이름
   my-backend:
-    image: asia.gcr.io/primal-library-370305/my-backend:1.5
+    image: asia.gcr.io/primal-library-370305/my-backend:1.8
     platform: linux/x86_64
     build:
       context: .
